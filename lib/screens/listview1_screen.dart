@@ -16,7 +16,7 @@ class Listview1Screen extends StatelessWidget {
       body: ListView(
         children: [
           ...options.map((e) => ListTile(
-            leading: Icon(Icons.access_alarm_rounded),
+            trailing: Icon(Icons.arrow_forward_ios_outlined),
             title: Text(e),
           ),).toList()
           
