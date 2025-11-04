@@ -1,16 +1,53 @@
+import 'package:fl_components/models/models.dart';
 import 'package:fl_components/screens/screens.dart';
 import 'package:flutter/material.dart';
 
 class AppRoutes {
   static const initialRoute = 'home';
 
-  static Map<String, Widget Function(BuildContext)> routes = {
-        'listview1': (BuildContext context) => Listview1Screen(),
-        'listview2': (BuildContext context) => Listview2Screen(),
-        'alert': (BuildContext context) => AlertScreen(),
-        'card': (BuildContext context) => CardScreen(),
-        'home': (BuildContext context) => HomeScreen()
-  };
+  static final MenuOptions = <MenuOption>[
+    MenuOption(
+      route: 'home', 
+      icon: Icons.home_max_outlined, 
+      name: 'Home Screen', 
+      screen: const HomeScreen()
+    ),
+    MenuOption(
+      route: 'listview1', 
+      icon: Icons.list_alt_outlined, 
+      name: 'Listview tipo 1', 
+      screen: const Listview1Screen()
+    ),
+    MenuOption(
+      route: 'listview2', 
+      icon: Icons.list_sharp, 
+      name: 'Listview tipo 2', 
+      screen: const Listview2Screen()
+    ),
+    MenuOption(
+      route: 'alert', 
+      icon: Icons.add_alert_outlined, 
+      name: 'Alertas', 
+      screen: const AlertScreen()
+    ),
+    MenuOption(
+      route: 'card', 
+      icon: Icons.card_travel_outlined, 
+      name: 'Cards', 
+      screen: const CardScreen()
+    ),
+  ];
+
+
+  static Map<String, Widget Function(BuildContext) > getAppRoutes(){
+    Map<String, Widget Function(BuildContext) > appRoutes = {};
+
+    for ( final option in MenuOptions ) {
+      appRoutes.addAll({option.route : ( BuildContext context ) => option.screen});
+    }
+
+    return appRoutes;
+  }
 
   static Route<dynamic> onGenerateRoute( RouteSettings settings) {
         return MaterialPageRoute(
