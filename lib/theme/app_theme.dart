@@ -27,7 +27,14 @@ class AppTheme {
            backgroundColor: primary,
            foregroundColor: Colors.white,
            elevation: 5,
+        ),
 
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            foregroundColor: primary,
+            //shadowColor: Colors.red
+            //backgroundColor: AppTheme.primary
+          )
         )
 
       );
