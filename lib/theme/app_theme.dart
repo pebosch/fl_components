@@ -21,6 +21,14 @@ class AppTheme {
         // Estilo de los botones de la aplicación
         textButtonTheme: TextButtonThemeData(
           style: TextButton.styleFrom(foregroundColor: AppTheme.primary),
+        ),
+
+        floatingActionButtonTheme: FloatingActionButtonThemeData(
+           backgroundColor: primary,
+           foregroundColor: Colors.white,
+           elevation: 5,
+
         )
+
       );
 }
