@@ -16,6 +16,9 @@ class _ContainerScreenState extends State<ContainerScreen> {
   Color _color = Colors.green;
   BorderRadiusGeometry _borderRadius = BorderRadius.circular(10);
 
+  List<Color> colores = [Colors.amber, Colors.blueAccent, Colors.lightGreenAccent, Colors.pinkAccent, Colors.black, Colors.deepPurple];
+
+
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -38,8 +41,8 @@ class _ContainerScreenState extends State<ContainerScreen> {
         onPressed: (){
           //_width = 200;
           _width = Random().nextInt(300).toDouble() + 50;
-          _height = 300;
-          _color = Colors.red;
+          _height = Random().nextInt(300).toDouble() + 50;
+          _color = colores[Random().nextInt(colores.length)];
           _borderRadius = BorderRadius.circular(20);
           setState(() {
             
