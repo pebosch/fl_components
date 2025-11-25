@@ -42,6 +42,12 @@ class AppRoutes {
       name: 'Avatar', 
       screen: const AvatarScreen()
     ),
+    MenuOption(
+      route: 'container', 
+      icon: Icons.inbox_sharp, 
+      name: 'Container', 
+      screen: const ContainerScreen()
+    ),
   ];
 
 
