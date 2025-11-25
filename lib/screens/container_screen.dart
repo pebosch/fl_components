@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
 
 class ContainerScreen extends StatefulWidget {
@@ -35,7 +36,14 @@ class _ContainerScreenState extends State<ContainerScreen> {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.play_circle_fill_rounded),
         onPressed: (){
-
+          //_width = 200;
+          _width = Random().nextInt(300).toDouble() + 50;
+          _height = 300;
+          _color = Colors.red;
+          _borderRadius = BorderRadius.circular(20);
+          setState(() {
+            
+          });
         }),
 
     );
