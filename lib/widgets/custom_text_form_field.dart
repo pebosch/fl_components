@@ -7,9 +7,10 @@ class CustomTextFormField extends StatelessWidget {
   final String? helperText;
   final IconData? icon;
   final IconData? suffixIcon;
+  final TextInputType? keyboardType;
 
   const CustomTextFormField({
-    super.key, this.hintText, this.labelText, this.helperText, this.icon, this.suffixIcon,
+    super.key, this.hintText, this.labelText, this.helperText, this.icon, this.suffixIcon, this.keyboardType,
   });
 
   @override
@@ -18,6 +19,7 @@ class CustomTextFormField extends StatelessWidget {
       autofocus: true,
       //initialValue: 'Da',
       textCapitalization: TextCapitalization.words,
+      keyboardType: keyboardType,
       onChanged: (value) {
         print('Valor: $value');
       },
@@ -28,15 +30,12 @@ class CustomTextFormField extends StatelessWidget {
       },
       autovalidateMode: AutovalidateMode.onUserInteraction,
       decoration: InputDecoration(
-        hintText: 'Nombre y apellidos',
-        labelText: 'Nombre y apellidos',
-        helperText: 'Solo letras',
+        hintText: hintText,
+        labelText: labelText,
+        helperText: helperText,
         //prefixIcon: Icon (Icons.verified_user_outlined),
-        icon: Icon (Icons.assignment_ind_rounded),
-        suffixIcon: Icon ( Icons.supervised_user_circle),
-        border: OutlineInputBorder(
-    
-        )
+        icon: Icon ( icon ),
+        suffixIcon: Icon ( suffixIcon ),
       ),
     );
   }

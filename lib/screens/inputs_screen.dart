@@ -15,7 +15,27 @@ class InputsScreen extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
          child: Column(
           children: [
-            CustomTextFormField()
+            CustomTextFormField(
+              hintText: 'Nombre',
+              labelText: 'Nombre',
+              helperText: 'Solo letras',
+              icon: Icons. assignment_ind_outlined,
+              suffixIcon: Icons.supervised_user_circle_outlined,
+            ),
+            SizedBox( height: 25),
+            CustomTextFormField(
+              hintText: 'Apellidos',
+              labelText: 'Apellidos',
+              icon: Icons.supervised_user_circle_rounded,
+            ),
+            SizedBox( height: 25),
+            CustomTextFormField(
+              hintText: 'E-Mail',
+              labelText: 'E-Mail de registro',
+              icon: Icons.email_rounded,
+              keyboardType: TextInputType.emailAddress,
+            ),
+
           ],
          )
       ),
