@@ -48,6 +48,12 @@ class AppRoutes {
       name: 'Container', 
       screen: const ContainerScreen()
     ),
+    MenuOption(
+      route: 'inputs', 
+      icon: Icons.input_rounded, 
+      name: 'Forms: Inputs', 
+      screen: const InputsScreen()
+    ),
   ];
 
 
