@@ -35,10 +35,7 @@ class InputsScreen extends StatelessWidget {
                 icon: Icon (Icons.assignment_ind_rounded),
                 suffixIcon: Icon ( Icons.supervised_user_circle),
                 border: OutlineInputBorder(
-                  /*borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(10),
-                    topRight: Radius.circular(10)
-                  )*/
+
                 )
               ),
             )
