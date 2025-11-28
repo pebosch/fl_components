@@ -33,13 +33,17 @@ class InputsScreen extends StatelessWidget {
                 labelText: 'Nombre',
                 helperText: 'Solo letras',
                 icon: Icons. assignment_ind_outlined,
-                suffixIcon: Icons.supervised_user_circle_outlined,
+                suffixIcon: Icons.supervised_user_circle_outlined, 
+                formProperty: 'nombre', 
+                formValues: formValues,
               ),
               SizedBox( height: 25),
               CustomTextFormField(
                 hintText: 'Apellidos',
                 labelText: 'Apellidos',
                 icon: Icons.supervised_user_circle_rounded,
+                formProperty: 'apellidos', 
+                formValues: formValues,
               ),
               SizedBox( height: 25),
               CustomTextFormField(
@@ -47,6 +51,8 @@ class InputsScreen extends StatelessWidget {
                 labelText: 'E-Mail de registro',
                 icon: Icons.email_rounded,
                 keyboardType: TextInputType.emailAddress,
+                formProperty: 'email', 
+                formValues: formValues,
               ),
               SizedBox( height: 25),
               CustomTextFormField(
@@ -55,6 +61,8 @@ class InputsScreen extends StatelessWidget {
                 icon: Icons.password_rounded,
                 keyboardType: TextInputType.emailAddress,
                 obscureText: true,
+                formProperty: 'password', 
+                formValues: formValues,
               ),
               SizedBox( height: 25),
               ElevatedButton(

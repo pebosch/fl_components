@@ -10,8 +10,11 @@ class CustomTextFormField extends StatelessWidget {
   final TextInputType? keyboardType;
   final bool obscureText;
 
+  final String formProperty;
+  final Map<String,String> formValues;
+
   const CustomTextFormField({
-    super.key, this.hintText, this.labelText, this.helperText, this.icon, this.suffixIcon, this.keyboardType, this.obscureText=false,
+    super.key, this.hintText, this.labelText, this.helperText, this.icon, this.suffixIcon, this.keyboardType, this.obscureText=false, required this.formProperty, required this.formValues,
   });
 
   @override
@@ -22,9 +25,7 @@ class CustomTextFormField extends StatelessWidget {
       textCapitalization: TextCapitalization.words,
       keyboardType: keyboardType,
       obscureText: obscureText,
-      onChanged: (value) {
-        print('Valor: $value');
-      },
+      onChanged: (value) => formValues[formProperty] = value,
       validator: (value) {
         if( value!.length < 5 ) {
           return 'Mínimo 5 caracteres';
