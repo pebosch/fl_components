@@ -54,6 +54,12 @@ class AppRoutes {
       name: 'Forms: Inputs', 
       screen: const InputsScreen()
     ),
+    MenuOption(
+      route: 'slider', 
+      icon: Icons.check_box_outlined, 
+      name: 'Slider & Checks', 
+      screen: const SliderScreen()
+    ),
   ];
 
 
