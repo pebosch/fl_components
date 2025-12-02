@@ -37,15 +37,22 @@ class _SliderScreenState extends State<SliderScreen> {
             : null
           ),
 
-          Checkbox(
-            value: _checkboxValue, 
-            onChanged:  (value) {
-              _checkboxValue = value ?? true;
-              setState(() {
+          Row(
+            children: [
+              Checkbox(
+                value: _checkboxValue, 
+                onChanged:  (value) {
+                  _checkboxValue = value ?? true;
+                  setState(() {
+              
+                  });
+                }
+              ),
+              Text('Soy mayor de edad')
+            ],
+          ),
 
-              });
-            }
-          )
+          
         ],
       )
     );
