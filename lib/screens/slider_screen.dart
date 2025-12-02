@@ -13,6 +13,7 @@ class _SliderScreenState extends State<SliderScreen> {
 
   double _sliderValue = 35;
   bool _checkboxValue = true;
+  bool _switchValue = true;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +28,7 @@ class _SliderScreenState extends State<SliderScreen> {
             min: 18,
             max: 99,
             value: _sliderValue, 
-            onChanged: _checkboxValue ? (value){
+            onChanged: (_checkboxValue && _switchValue) ? (value){
               print(value);
               _sliderValue = value;
               setState(() {
@@ -52,7 +53,25 @@ class _SliderScreenState extends State<SliderScreen> {
             ],
           ),
 
-          
+          Row(
+            children: [
+              Transform.scale(
+                scale: 0.7,
+                child: Switch(
+                  value: _switchValue, 
+                  onChanged:  (value) {
+                    _switchValue = value;
+                    setState(() {
+                
+                    });
+                  }
+                ),
+              ),
+              Text('Soy mayor de edad')
+            ],
+          )
+
+
         ],
       )
     );
