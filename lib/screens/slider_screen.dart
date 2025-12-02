@@ -1,15 +1,53 @@
+import 'package:fl_components/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
-class SliderScreen extends StatelessWidget {
+class SliderScreen extends StatefulWidget {
    
   const SliderScreen({Key? key}) : super(key: key);
-  
+
+  @override
+  State<SliderScreen> createState() => _SliderScreenState();
+}
+
+class _SliderScreenState extends State<SliderScreen> {
+
+  double _sliderValue = 35;
+  bool _checkboxValue = true;
+
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-         child: Text('SliderScreen'),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Sliders & Checks'),
       ),
+      body: Column(
+        children: [
+          Slider.adaptive(
+            activeColor: AppTheme.primary,
+            min: 18,
+            max: 99,
+            value: _sliderValue, 
+            onChanged: _checkboxValue ? (value){
+              print(value);
+              _sliderValue = value;
+              setState(() {
+                
+              });
+            }
+            : null
+          ),
+
+          Checkbox(
+            value: _checkboxValue, 
+            onChanged:  (value) {
+              _checkboxValue = value ?? true;
+              setState(() {
+
+              });
+            }
+          )
+        ],
+      )
     );
   }
 }
