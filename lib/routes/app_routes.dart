@@ -60,6 +60,12 @@ class AppRoutes {
       name: 'Slider & Checks', 
       screen: const SliderScreen()
     ),
+    MenuOption(
+      route: 'listviewbuilder', 
+      icon: Icons.list_alt_rounded, 
+      name: 'InfiniteScroll', 
+      screen: const ListViewBuilderScreen()
+    ),
   ];
 
 

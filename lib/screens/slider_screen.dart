@@ -56,7 +56,7 @@ class _SliderScreenState extends State<SliderScreen> {
           Row(
             children: [
               Transform.scale(
-                scale: 0.7,
+                scale: 0.5,
                 child: Switch(
                   value: _switchValue, 
                   onChanged:  (value) {
