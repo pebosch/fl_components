@@ -72,6 +72,9 @@ class _ListViewBuilderScreenState extends State<ListViewBuilderScreen> {
           children: [
             ListView.builder(
               controller: scrollController,
+              physics: const BouncingScrollPhysics(
+              parent: AlwaysScrollableScrollPhysics(),
+            ),
               itemCount: imagesIds.length,
               itemBuilder: (BuildContext context, int index) {
                 return FadeInImage(
@@ -84,11 +87,12 @@ class _ListViewBuilderScreenState extends State<ListViewBuilderScreen> {
               },
             ),
 
-            Positioned(
-              child: _LoadingIcon(),
-              bottom: 15,
-              left: (size.width/2) - 30,
-            )
+            if( isLoading )
+              Positioned(
+                child: _LoadingIcon(),
+                bottom: 15,
+                left: (size.width/2) - _LoadingIcon.loadingbox/2,
+              )
           ],
         ),
       ),
@@ -101,17 +105,19 @@ class _LoadingIcon extends StatelessWidget {
     super.key,
   });
 
+  static double loadingbox = 60;
+
   @override
   Widget build(BuildContext context) {
     return Container(
       
-      height: 60,
-      width: 60,
+      height: loadingbox,
+      width: loadingbox,
       child: CircularProgressIndicator( color: AppTheme.primary),
       padding: EdgeInsets.all(8),
       decoration: BoxDecoration(
-        color: Colors.white,
-        shape: BoxShape.circle
+        color: Colors.white.withValues(alpha: 0.75),
+        shape: BoxShape.circle,
       ),
 
     );
