@@ -1,7 +1,8 @@
+import 'package:fl_components/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class ListViewBuilderScreen extends StatefulWidget {
-   
+
   const ListViewBuilderScreen({Key? key}) : super(key: key);
 
   @override
@@ -58,25 +59,61 @@ class _ListViewBuilderScreenState extends State<ListViewBuilderScreen> {
 
   @override
   Widget build(BuildContext context) {
+
+    final size = MediaQuery.of(context).size;
+    
+
     return Scaffold(
       body: MediaQuery.removePadding(
         context: context,
         removeTop: true,
         removeBottom: true,
-        child: ListView.builder(
-          controller: scrollController,
-          itemCount: imagesIds.length,
-          itemBuilder: (BuildContext context, int index) {
-            return FadeInImage(
-              width: double.infinity,
-              height: 250,
-              fit: BoxFit.cover,
-              placeholder: AssetImage('assets/jar-loading.gif'), 
-              image: NetworkImage('https://picsum.photos/500/600?image=${ imagesIds[index] }')
-            );
-          },
+        child: Stack(
+          children: [
+            ListView.builder(
+              controller: scrollController,
+              itemCount: imagesIds.length,
+              itemBuilder: (BuildContext context, int index) {
+                return FadeInImage(
+                  width: double.infinity,
+                  height: 250,
+                  fit: BoxFit.cover,
+                  placeholder: AssetImage('assets/jar-loading.gif'), 
+                  image: NetworkImage('https://picsum.photos/500/600?image=${ imagesIds[index] }')
+                );
+              },
+            ),
+
+            Positioned(
+              child: _LoadingIcon(),
+              bottom: 15,
+              left: (size.width/2) - 30,
+            )
+          ],
         ),
       ),
+    );
+  }
+}
+
+class _LoadingIcon extends StatelessWidget {
+  const _LoadingIcon({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      
+      height: 60,
+      width: 60,
+      child: CircularProgressIndicator( color: AppTheme.primary),
+      padding: EdgeInsets.all(8),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        shape: BoxShape.circle
+      ),
+
     );
   }
 }
