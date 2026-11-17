@@ -16,6 +16,10 @@ class Listview2Screen extends StatelessWidget {
         itemBuilder: (context, index) => ListTile(
           trailing: Icon( Icons.arrow_forward_ios_outlined),
           title: Text( options[index]),
+          onTap: () {
+            final version = options[index];
+            print( version );
+          },
         ), 
         separatorBuilder: (context, index) => Divider(), 
         itemCount: options.length
