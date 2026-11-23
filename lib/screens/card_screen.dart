@@ -12,6 +12,7 @@ class CardScreen extends StatelessWidget {
         title: Text('Tarjetas (cards)'),
       ),
       body: ListView(
+        padding: EdgeInsets.symmetric( horizontal: 20, vertical: 10),
         children: [
           Card(
             child: Column(
