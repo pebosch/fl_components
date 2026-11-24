@@ -6,6 +6,10 @@ class CustomCardTipo2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      clipBehavior: Clip.antiAlias,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20)
+      ),
       elevation: 10,
       child: Column(
         children: [
@@ -16,6 +20,11 @@ class CustomCardTipo2 extends StatelessWidget {
             height: 350,
             fit: BoxFit.cover,
             fadeInDuration: Duration(milliseconds: 1000),
+          ),
+          Container(
+            alignment: AlignmentDirectional.centerEnd,
+            padding: EdgeInsets.only(top: 10, bottom: 10, right: 10),
+            child: Text('San Bernardo')
           )
         ],
       ),
